@@ -1,0 +1,17 @@
+/*
+.*
+!/res/
+!/src/
+!.clang-format
+!.clang-tidy
+!.editorconfig
+!.gitattributes
+!.gitignore
+!/CMakeLists.txt
+!/CMakePresets.json
+!/license.txt
+!/make.cmd
+!/makefile
+!/readme.md
+!/vcpkg-configuration.json
+!/vcpkg.json

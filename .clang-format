@@ -1,0 +1,205 @@
+# Clang-Format 18
+---
+BasedOnStyle: LLVM
+
+# Columns
+ColumnLimit: 100
+
+# Indent
+IndentWidth: 2
+ConstructorInitializerIndentWidth: 2
+ContinuationIndentWidth: 2
+IndentExternBlock: NoIndent
+IndentPPDirectives: AfterHash
+
+# Alignment
+AlignAfterOpenBracket: AlwaysBreak
+AlignArrayOfStructures: Right
+AlignConsecutiveMacros: Consecutive
+AlignEscapedNewlines: Left  # version <= 18
+#AlignEscapedNewlines: LeftWithLastLine  # version >= 19
+AlignOperands: AlignAfterOperator
+PointerAlignment: Left
+QualifierAlignment: Left
+ReferenceAlignment: Left
+
+# Line Breaks
+AllowAllArgumentsOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowBreakBeforeNoexceptSpecifier: OnlyWithParen
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortLambdasOnASingleLine: Inline
+AlwaysBreakBeforeMultilineStrings: true
+AlwaysBreakTemplateDeclarations: Yes  # version <= 18
+
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterControlStatement: MultiLine
+  AfterFunction: true
+  BeforeCatch: true
+  BeforeWhile: false
+  SplitEmptyFunction: false
+  SplitEmptyRecord: false
+  SplitEmptyNamespace: false
+
+BreakBeforeTernaryOperators: false
+BreakConstructorInitializers: AfterColon
+BreakInheritanceList: AfterColon
+BreakStringLiterals: true
+#BreakTemplateDeclarations: Yes  # version >= 19
+
+InsertNewlineAtEOF: true
+KeepEmptyLinesAtTheStartOfBlocks: false
+KeepEmptyLinesAtEOF: false
+LineEnding: LF
+
+MaxEmptyLinesToKeep: 2
+RequiresClausePosition: WithPreceding
+SeparateDefinitionBlocks: Always
+
+# Packing
+BinPackArguments: false
+BinPackParameters: false
+PackConstructorInitializers: Never
+
+# Spaces
+BitFieldColonSpacing: None
+Cpp11BracedListStyle: false
+SpaceAroundPointerQualifiers: Default
+
+SpaceBeforeParens: Custom
+SpaceBeforeParensOptions:
+  AfterForeachMacros: false
+  AfterIfMacros: false
+
+# Sorting
+SortUsingDeclarations: Never
+
+# Comments
+CommentPragmas: '^ (NOTE|TODO):'
+SpacesBeforeTrailingComments: 2
+ReflowComments: true
+
+# Penalties
+PenaltyBreakAssignment: 1
+PenaltyBreakFirstLessLess: 0
+PenaltyBreakBeforeFirstCallParameter: 10
+PenaltyExcessCharacter: 100
+PenaltyIndentedWhitespace: 10
+PenaltyReturnTypeOnItsOwnLine: 300
+---
+Language: Cpp
+Standard: Latest
+
+# Integers
+IntegerLiteralSeparator:
+  Binary: 8
+  BinaryMinDigits: 9
+  Decimal: 3
+  DecimalMinDigits: 4
+  Hex: 8
+  HexMinDigits: 9
+
+# Includes
+SortIncludes: CaseInsensitive
+
+IncludeCategories:
+  # Relative Paths
+  - Regex: '^"'
+    Priority: 1
+
+  # Project Headers
+  - Regex: '^<application(/|\.hpp)'
+    Priority: 2
+    SortPriority: 0
+
+  # Windows Core Headers
+  - Regex: '^<(ntifs|windows)\.h>'
+    Priority: 6
+
+  # Windows Driver Headers
+  - Regex: '^<(ntddk|ntddkbd|ntddmou|ntstatus|wdm)\.h>'
+    Priority: 7
+
+  # DirectX Headers
+  - Regex: '^<(d2d.*|d3d.*|dxgi.*|dwrite.*|dinput.*|dcomp)\.h>'
+    Priority: 8
+
+  # Windows Runtime Headers
+  - Regex: '^<wrl/'
+    Priority: 9
+
+  # Windows Headers
+  - Regex: '^<(wdf|commctrl|shellapi|tlhelp32|winioctl|winternl|winsock2|ws2tcpip|mswsock|unknwn)\.h>'
+    Priority: 10
+
+  # Benchmark Headers
+  - Regex: '^<benchmark/'
+    Priority: 3
+    SortPriority: 0
+
+  # Test Framework Headers
+  - Regex: '^<(gtest|gmock|doctest)/'
+    Priority: 4
+    SortPriority: 0
+
+  # Library Headers
+  - Regex: '^<.*\.'
+    Priority: 5
+
+  # C Compatibility Headers
+  - Regex: '^<c(a|c|e|f|i|l|m|s|t|u|w)'
+    Priority: 12
+
+  # C++ Standard Library Headers
+  - Regex: '^<'
+    Priority: 11
+
+# Sources: a.hpp is main include for a.cpp, a_test.cpp, etc.
+IncludeIsMainRegex: '(_test|_win32|_posix)?$'
+
+# Headers: a.hpp, a_base.hpp, etc. are main includes for a.cpp
+IncludeIsMainSourceRegex: '(_base|_impl)?$'
+
+# Macros
+SkipMacroDefinitionBody: true  # false
+
+AttributeMacros:
+  - NTAPI
+  - WINAPI
+  - __cdecl
+  - __stdcall
+  - __fastcall
+  - __vectorcall
+  - __declspec(dllimport)
+  - __declspec(dllexport)
+  - __declspec(noinline)
+  - __declspec(noreturn)
+  - __capability
+
+ForEachMacros:
+  - foreach
+  - Q_FOREACH
+  - BOOST_FOREACH
+
+IfMacros:
+  - BOOST_LIKELY
+  - BOOST_UNLIKELY
+
+StatementAttributeLikeMacros:
+  - Q_EMIT
+
+StatementMacros:
+  - Q_UNUSED
+  - QT_REQUIRE_VERSION
+
+WhitespaceSensitiveMacros:
+  - BOOST_PP_STRINGIZE
+
+MacroBlockBegin: '^BEGIN_MSG_MAP'
+MacroBlockEnd: '^END_MSG_MAP'
+---
+Language: JavaScript
+JavaScriptQuotes: Single
+...
