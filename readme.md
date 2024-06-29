@@ -1,5 +1,5 @@
 # Application
-C++ application project template.
+C++ application project template (similar to <https://github.com/qis/library>).
 
 ## Linux
 ```sh
