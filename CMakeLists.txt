@@ -28,7 +28,7 @@ target_link_libraries(objects PUBLIC fmt::fmt)
 find_package(Threads REQUIRED)
 target_link_libraries(objects PUBLIC Threads::Threads)
 
-# Main
+# Application
 add_executable(${PROJECT_NAME} src/main.cpp src/main.manifest src/main.rc)
 target_link_libraries(${PROJECT_NAME} PRIVATE objects)
 
