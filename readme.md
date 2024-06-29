@@ -73,14 +73,15 @@ make clean
 ## Template
 Use template to create a new project.
 
-1. Update `project` in [CMakeLists.txt](CMakeLists.txt).
-2. Update `TARGET` in [makefile](makefile).
-3. Update `Project Headers` in [.clang-format](.clang-format).
-4. Update `dependencies` in [vcpkg.json](vcpkg.json).
-5. Update [vcpkg-configuration.json](vcpkg-configuration.json) with `vcpkg x-update-baseline`.
-6. Rename [src/application](src/application) to new project name.
-7. Update sources and icon in [src](src).
-8. Update project and dependency licenses in:
+1. Update this readme file.
+2. Update `project` in [CMakeLists.txt](CMakeLists.txt).
+3. Update `TARGET` in [makefile](makefile).
+4. Update `Project Headers` in [.clang-format](.clang-format).
+5. Update `dependencies` in [vcpkg.json](vcpkg.json).
+6. Update [vcpkg-configuration.json](vcpkg-configuration.json) with `vcpkg x-update-baseline`.
+7. Rename [src/application](src/application) to new project name.
+8. Update sources and icon in [src](src).
+9. Update project and dependency licenses in:
    - [res/license.rtf](res/license.rtf)
    - [res/license.txt](res/license.txt)
    - [license.txt](license.txt)
