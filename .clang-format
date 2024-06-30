@@ -131,7 +131,7 @@ IncludeCategories:
     Priority: 9
 
   # Windows Headers
-  - Regex: '^<(wdf|commctrl|shellapi|tlhelp32|winioctl|winternl|winsock2|ws2tcpip|mswsock|unknwn)\.h>'
+  - Regex: '^<(wdf|commctrl|shellapi|tlhelp32|winioctl|winternl|winsock2|ws2tcpip|mswsock|psapi|unknwn)\.h>'
     Priority: 10
 
   # Benchmark Headers
