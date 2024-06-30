@@ -74,7 +74,7 @@ make clean
 Use template to create a new project.
 
 1. Update this readme file.
-2. Update `project` in [CMakeLists.txt](CMakeLists.txt).
+2. Update `project` and `NAMESPACE` GUID in [CMakeLists.txt](CMakeLists.txt).
 3. Update `TARGET` in [makefile](makefile).
 4. Update `Project Headers` in [.clang-format](.clang-format).
 5. Update `dependencies` in [vcpkg.json](vcpkg.json).
@@ -85,6 +85,20 @@ Use template to create a new project.
    - [res/license.rtf](res/license.rtf)
    - [res/license.txt](res/license.txt)
    - [license.txt](license.txt)
+
+To generate a new `NAMESPACE` GUID for the package, execute
+
+```cmd
+uuidgen /c
+```
+
+in the "x64 Native Tools Command Prompt for VS 2022" on Windows, or
+
+```sh
+cat /proc/sys/kernel/random/uuid | tr [:lower:] [:upper:]
+```
+
+on Linux.
 
 [vsc]: https://visualstudio.microsoft.com/vs/community
 [nbs]: https://github.com/ninja-build/ninja/releases
